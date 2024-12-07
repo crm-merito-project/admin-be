@@ -1,0 +1,41 @@
+azure:
+  cosmos:
+    default-gateway-mode: true
+    endpoint: azure-cosmos-endpoint
+    key: ''
+    consistency-level: SESSION
+    endpoint-discovery-enabled: false
+micronaut:
+  router:
+    static-resources:
+      swagger:
+        paths: classpath:META-INF/swagger
+        mapping: /swagger/**
+      openapi-explorer:
+        paths: classpath:META-INF/swagger/views/openapi-explorer
+        mapping: /openapi-explorer/**
+  security:
+    intercept-url-map:
+      - access: isAnonymous()
+        pattern: /swagger/**
+      - access: isAnonymous()
+        pattern: /openapi-explorer/**
+    authentication: session
+    token:
+      jwt:
+        signatures:
+          secret:
+            generator:
+              secret: ${JWT_GENERATOR_SIGNATURE_SECRET:pleaseChangeThisSecretForANewOne}
+  metrics:
+    enabled: true
+    export:
+      azuremonitor:
+        enabled: true
+        instrumentationKey: ${AZUREMONITOR_INSTRUMENTATION_KEY}
+        step: PT1M
+jobrunr:
+  background-job-server:
+    enabled: false
+  dashboard:
+    enabled: false

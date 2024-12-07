@@ -1,0 +1,5 @@
+micronaut:
+  application:
+    name: crm
+  config-client:
+    enabled: true

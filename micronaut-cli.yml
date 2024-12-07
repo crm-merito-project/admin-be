@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: merito.crm
+testFramework: junit
+sourceLanguage: java
+buildTool: gradle
+features: [ app-name, asciidoctor, azure-cosmos-db, azure-key-vault, azure-logging, cache-caffeine, discovery-client, graalvm, gradle, http-client, java, java-application, jetty-server, jobrunr-jobrunr, junit, junit-params, junit-platform-suite-engine, log4j2, lombok, management, micrometer, micrometer-annotation, micrometer-azure-monitor, micronaut-aot, micronaut-build, micronaut-http-validation, mockito, openapi, openapi-explorer, readme, security, security-annotations, security-csrf, security-jwt, security-oauth2, security-session, serialization-jackson, shade, static-resources, validation, websocket, yaml, yaml-build ]
